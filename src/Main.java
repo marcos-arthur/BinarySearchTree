@@ -6,5 +6,8 @@ public class Main {
 
         bst.insert(50);
         bst.insert(30);
+        bst.insert(35);
+
+//        System.out.println(bst.search(35).getValue());
     }
 }

@@ -48,5 +48,11 @@ public class BinarySearchTree {
         if(node == null || node.getValue() == value){
             return node;
         }
+
+        if(value < node.getValue()){
+            return Search(node.getLeft_child(), value);
+        }else {
+            return Search(node.getRight_child(), value);
+        }
     }
 }
