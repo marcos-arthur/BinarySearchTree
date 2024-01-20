@@ -1,7 +1,7 @@
-public class Tree {
+public class BinarySearchTree {
     private Node root;
 
-    public Tree() {
+    public BinarySearchTree() {
         this.root = null;
     }
 
@@ -13,7 +13,19 @@ public class Tree {
         this.root = root;
     }
 
-    Node insert(Node node, int value){
+    Node insert(int value){
+        Node newNode;
+        if(root == null){
+            root = new Node(value);
+            newNode = root;
+        }else{
+            newNode = insert(root, value);
+        }
+
+        return newNode;
+    }
+
+    private Node insert(Node node, int value){
         if(node == null){
             node = new Node(value);
             return node;
@@ -26,5 +38,15 @@ public class Tree {
         }
 
         return node;
+    }
+
+    Node search(int value){
+        return Search(root, value);
+    }
+
+    private Node Search(Node node, int value){
+        if(node == null || node.getValue() == value){
+            return node;
+        }
     }
 }
