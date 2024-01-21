@@ -19,5 +19,8 @@ public class Main {
         bst.preOrder(bst.getRoot());
         System.out.println();
         bst.posOrder(bst.getRoot());
+
+        System.out.println();
+        bst.printTree(bst.getRoot());
     }
 }

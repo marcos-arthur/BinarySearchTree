@@ -100,4 +100,21 @@ public class BinarySearchTree {
         // Imprimir valor
         System.out.print(node.getValue() + " ");
     }
+
+    //Utilizando o pré-ordem
+    public void printTree(Node node){
+        if (node == null){
+            return;
+        }
+
+        // Imprimir valor
+        System.out.print("(" + node.getValue() + " ");
+
+        // Recursão no lado esquerdo do Nó
+        printTree(node.getLeft_child());
+
+        // Recursão no lado direito do Nó
+        printTree(node.getRight_child());
+        System.out.print(")");
+    }
 }
