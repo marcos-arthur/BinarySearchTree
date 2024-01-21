@@ -13,5 +13,14 @@ public class Main {
         bst.insert(7);
 
         System.out.println(bst.search(7).getValue());
+
+        bst.inOrder(bst.getRoot());
+        System.out.println();
+        bst.preOrder(bst.getRoot());
+        System.out.println();
+        bst.posOrder(bst.getRoot());
+
+        System.out.println();
+        bst.printTree(bst.getRoot());
     }
 }
