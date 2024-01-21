@@ -55,4 +55,49 @@ public class BinarySearchTree {
             return Search(node.getRight_child(), value);
         }
     }
+
+    //Em Ordem
+    public void inOrder(Node node) {
+        if (node == null)
+            return;
+
+        // Recursão no lado esquerdo do Nó
+        inOrder(node.getLeft_child());
+
+        // Imprimir valor
+        System.out.print(node.getValue() + " ");
+
+        // Recursão no lado direito do Nó
+        inOrder(node.getRight_child());
+    }
+
+    //Pré-ordem
+    public void preOrder(Node node){
+        if (node == null)
+            return;
+
+        // Imprimir valor
+        System.out.print(node.getValue() + " ");
+
+        // Recursão no lado esquerdo do Nó
+        preOrder(node.getLeft_child());
+
+        // Recursão no lado direito do Nó
+        preOrder(node.getRight_child());
+    }
+
+    // Pós-0rdem
+    public void posOrder(Node node){
+        if (node == null)
+            return;
+
+        // Recursão no lado esquerdo do Nó
+        posOrder(node.getLeft_child());
+
+        // Recursão no lado direito do Nó
+        posOrder(node.getRight_child());
+
+        // Imprimir valor
+        System.out.print(node.getValue() + " ");
+    }
 }
