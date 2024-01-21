@@ -1,26 +1,51 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         BinarySearchTree bst = new BinarySearchTree();
+        int line; String line2;
 
-        bst.insert(5);
-        bst.insert(3);
-        bst.insert(2);
-        bst.insert(1);
-        bst.insert(4);
-        bst.insert(6);
-        bst.insert(7);
+        File input = new File("/Users/luenn/Downloads/Faculdade/BinarySearchTree/src/input.txt");
+        Scanner scan = new Scanner(input);
 
-        System.out.println(bst.search(7).getValue());
+        while(scan.hasNextLine()){
+            line = Integer.parseInt(scan.nextLine());
+            bst.insert(line);
+        }
 
-        bst.inOrder(bst.getRoot());
-        System.out.println();
-        bst.preOrder(bst.getRoot());
-        System.out.println();
-        bst.posOrder(bst.getRoot());
+        File actions = new File("/Users/luenn/Downloads/Faculdade/BinarySearchTree/src/actions.txt");
+        scan = new Scanner(actions);
 
-        System.out.println();
-        bst.printTree(bst.getRoot());
+        while(scan.hasNextLine()){
+            line2 = scan.nextLine();
+            if(line2.contains("search")){
+                line = Integer.parseInt(line2.substring(line2.indexOf("(")+1, line2.indexOf(")")));
+                System.out.println(bst.search(line));
+            } else if (line2.equals("inOrder")) {
+                System.out.println(bst.inOrder());
+            } else if (line2.equals("preOrder")) {
+                bst.preOrder(bst.getRoot());
+                System.out.println();
+            } else if (line2.equals("posOrder")) {
+                bst.posOrder(bst.getRoot());
+                System.out.println();
+            } else if (line2.equals("printTree")) {
+                bst.printTree(bst.getRoot());
+                System.out.println();
+            } else if (line2.contains("insert")) {
+                line = Integer.parseInt(line2.substring(line2.indexOf("(")+1, line2.indexOf(")")));
+                bst.insert(line);
+            } else if (line2.contains("getInOrderPosition")) {
+                line2 = line2.substring(line2.indexOf("(")+1, line2.indexOf(")"));
+                bst.getInOrderPosition(line2);
+            } else if (line2.equals("getInOrderMedian")) {
+                bst.getInOrderMedian();
+            } else if (line2.contains("remove")) {
+                line = Integer.parseInt(line2.substring(line2.indexOf("(")+1, line2.indexOf(")")));
+                bst.remove(line);
+            }
+        }
     }
 }
