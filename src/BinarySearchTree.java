@@ -1,5 +1,14 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class BinarySearchTree {
     private Node root;
+
+    private List<String> inOrderString = new ArrayList<>();
+    private List<String> preOrderString = new ArrayList<>();
+    private List<String> postOrderString = new ArrayList<>();
+
+    private int size = 0;
 
     public BinarySearchTree() {
         this.root = null;
@@ -13,11 +22,24 @@ public class BinarySearchTree {
         this.root = root;
     }
 
+    public List<String> getInOrderString() {
+        return inOrderString;
+    }
+
+    public void setInOrderString(List<String> inOrderString) {
+        this.inOrderString = inOrderString;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
     Node insert(int value){
         Node newNode;
         if(root == null){
             root = new Node(value);
             newNode = root;
+            size++;
         }else{
             newNode = insert(root, value);
         }
@@ -28,6 +50,7 @@ public class BinarySearchTree {
     private Node insert(Node node, int value){
         if(node == null){
             node = new Node(value);
+            size++;
             return node;
         }
 
@@ -56,6 +79,33 @@ public class BinarySearchTree {
         }
     }
 
+    public String getInOrderMedian(){
+        inOrder();
+
+        if(inOrderString.size() % 2 == 0) return inOrderString.get(inOrderString.size()/2 - 1);
+        else return inOrderString.get(inOrderString.size()/2);
+    }
+
+    public int getInOrderPosition(String value){
+        inOrder();
+
+        return inOrderString.indexOf(value) + 1;
+    }
+
+    public String inOrder(){
+        inOrderString.clear();
+        inOrder(root);
+
+        StringBuilder stringValues = new StringBuilder();
+
+        for(String value : inOrderString) {
+            stringValues.append(value);
+            stringValues.append(" ");
+        }
+
+        return stringValues.toString();
+    }
+
     //Em Ordem
     public void inOrder(Node node) {
         if (node == null)
@@ -64,8 +114,8 @@ public class BinarySearchTree {
         // Recursão no lado esquerdo do Nó
         inOrder(node.getLeft_child());
 
-        // Imprimir valor
-        System.out.print(node.getValue() + " ");
+        // Adiciona valor na lista
+        inOrderString.add(Integer.toString(node.getValue()));
 
         // Recursão no lado direito do Nó
         inOrder(node.getRight_child());
@@ -119,7 +169,7 @@ public class BinarySearchTree {
     }
 
     void remove(int value){
-        remove(root, value);
+        Node removedNode = remove(root, value);
     }
 
     private Node remove(Node node, int value){
@@ -128,6 +178,7 @@ public class BinarySearchTree {
         }
 
         if(node.getValue() == value){
+            size--;
             if (node.getRight_child() == null) {
                 return node.getLeft_child();
             } else if (node.getLeft_child() == null) {
