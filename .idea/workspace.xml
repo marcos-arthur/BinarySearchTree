@@ -35,7 +35,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -67,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1705784851371</updated>
       <workItem from="1705784852706" duration="155000" />
-      <workItem from="1705785033672" duration="7178000" />
+      <workItem from="1705785033672" duration="15748000" />
     </task>
     <servers />
   </component>
@@ -75,14 +75,11 @@
     <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>4</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Node" memberName="left_child" />
+        <PinnedItemInfo parentTag="Node" memberName="right_child" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
