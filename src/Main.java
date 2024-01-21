@@ -4,10 +4,14 @@ public class Main {
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
 
-        bst.insert(50);
-        bst.insert(30);
-        bst.insert(35);
+        bst.insert(5);
+        bst.insert(3);
+        bst.insert(2);
+        bst.insert(1);
+        bst.insert(4);
+        bst.insert(6);
+        bst.insert(7);
 
-//        System.out.println(bst.search(35).getValue());
+        System.out.println(bst.search(7).getValue());
     }
 }
