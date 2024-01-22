@@ -1,0 +1,17 @@
+search(7)
+inOrder
+preOrder
+posOrder
+printTree
+insert(8)
+inOrder
+preOrder
+posOrder
+printTree
+getInOrderMedian
+getInOrderPosition(4)
+insert(9)
+printTree
+getInOrderMedian
+remove(8)
+printTree

@@ -7,7 +7,7 @@ public class Main {
         BinarySearchTree bst = new BinarySearchTree();
         int line; String line2;
 
-        File input = new File("/Users/luenn/Downloads/Faculdade/BinarySearchTree/src/input.txt");
+        File input = new File("/Users/marco/Documentos/_Assuntos e Atividade 2024_/UFRN/2023.4/Estruturas de Dados Básicas II/BinarySearchTree/src/input.txt");
         Scanner scan = new Scanner(input);
 
         while(scan.hasNextLine()){
@@ -15,7 +15,7 @@ public class Main {
             bst.insert(line);
         }
 
-        File actions = new File("/Users/luenn/Downloads/Faculdade/BinarySearchTree/src/actions.txt");
+        File actions = new File("/Users/marco/Documentos/_Assuntos e Atividade 2024_/UFRN/2023.4/Estruturas de Dados Básicas II/BinarySearchTree/src/actions.txt");
         scan = new Scanner(actions);
 
         while(scan.hasNextLine()){
